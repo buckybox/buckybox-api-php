@@ -130,14 +130,6 @@
     }
   }
 
-function ch_info($ch){
-  if(curl_errno($ch)){
-    echo '"<strong>CURL ERRORS</strong><br />". ' . curl_error($ch);
-  }
-  echo  "<strong>CURL INFO</strong><br />";
-  var_dump(curl_getinfo($ch));
-}
-
 final class CurlFactory
 {
     public $curl;
@@ -147,11 +139,11 @@ final class CurlFactory
      */
     public static function Instance()
     {
-        static $inst = null;
-        if ($inst === null) {
-            $inst = new CurlFactory();
-        }
-        return $inst;
+      static $inst = null;
+      if ($inst === null) {
+        $inst = new CurlFactory();
+      }
+      return $inst;
     }
     private function __construct()
     {
@@ -161,8 +153,7 @@ final class CurlFactory
         'API-Secret: '.Bucky_Box_Distributor_Api_Settings::$secret
       ));
       curl_setopt($this->curl, CURLOPT_RETURNTRANSFER, 1);
-      #justfortesting
-      curl_setopt($this->curl, CURLINFO_HEADER_OUT, true);
+  
     }
 }
 ?>
