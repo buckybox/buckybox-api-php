@@ -41,7 +41,7 @@
 		$api = new Bucky_Box_Distributor_Api();
 
 		$test = $_GET['test'];
-		echo "<h1>Test $test</h1>";
+		echo "<h1>Test $test $code[0] </h1>";
 
 		switch ($test) {
 		 	case 'boxes':
@@ -172,7 +172,9 @@
 			</label>
 		</form>
 		<?php
-			echo "<code>$code</code>";
+			echo "<code>";
+			var_dump($code);
+			echo "</code>";
 		?>
 		</div>
 	</body>

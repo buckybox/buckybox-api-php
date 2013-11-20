@@ -4,6 +4,8 @@
    * More information: api.buckybox.com/docs/v0.0
    *
    * $data is an associative array of key/pair values or a JSON string
+   *
+   * Each method returns array(statusCode, JSON)
    */
   
 
@@ -44,16 +46,18 @@
       $url = sprintf("%s?%s", Bucky_Box_Distributor_Api_Settings::$url."customers", http_build_query($data));
       curl_setopt($ch, CURLOPT_URL, $url);  
       $result = curl_exec($ch);
+      $status = curl_getinfo($ch, CURLINFO_HTTP_CODE);
       curl_close($ch);
-      return $result;
+      return [ $status, $result];
     }
     public function find($id, $data = []){
       $ch = CurlFactory::Instance()->curl;
       $url = sprintf("%s?%s", Bucky_Box_Distributor_Api_Settings::$url."customers/".$id, http_build_query($data));
       curl_setopt($ch, CURLOPT_URL, $url);  
       $result = curl_exec($ch);
+      $status = curl_getinfo($ch, CURLINFO_HTTP_CODE);
       curl_close($ch);
-      return $result;
+      return [ $status, $result];
     }
     public function findByEmail($data = []){
       return $this->all($data);
@@ -65,8 +69,9 @@
       curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
       curl_setopt($ch, CURLOPT_URL, $url);  
       $result = curl_exec($ch);
+      $status = curl_getinfo($ch, CURLINFO_HTTP_CODE);
       curl_close($ch);
-      return $result;
+      return [ $status, $result];
     }
   }
 
@@ -76,8 +81,9 @@
       $url = sprintf("%s?%s", Bucky_Box_Distributor_Api_Settings::$url."delivery_services", http_build_query($data));
       curl_setopt($ch, CURLOPT_URL, $url);  
       $result = curl_exec($ch);
+      $status = curl_getinfo($ch, CURLINFO_HTTP_CODE);
       curl_close($ch);
-      return $result;
+      return [ $status, $result];
     }
   }
 
@@ -87,16 +93,18 @@
       $url = sprintf("%s?%s", Bucky_Box_Distributor_Api_Settings::$url."orders", http_build_query($data));
       curl_setopt($ch, CURLOPT_URL, $url);  
       $result = curl_exec($ch);
+      $status = curl_getinfo($ch, CURLINFO_HTTP_CODE);
       curl_close($ch);
-      return $result;
+      return [ $status, $result];
     }
     public function find($id){
       $ch = CurlFactory::Instance()->curl;
       $url = sprintf("%s?%s", Bucky_Box_Distributor_Api_Settings::$url."orders/".$id, http_build_query($data));
       curl_setopt($ch, CURLOPT_URL, $url);  
       $result = curl_exec($ch);
+      $status = curl_getinfo($ch, CURLINFO_HTTP_CODE);
       curl_close($ch);
-      return $result;
+      return [ $status, $result];
     }
     public function create($data){
       $ch = CurlFactory::Instance()->curl;
@@ -105,8 +113,9 @@
       curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
       curl_setopt($ch, CURLOPT_URL, $url);  
       $result = curl_exec($ch);
+      $status = curl_getinfo($ch, CURLINFO_HTTP_CODE);
       curl_close($ch);
-      return $result;
+      return [ $status, $result];
     }
   }
 
@@ -116,8 +125,9 @@
       $url = sprintf("%s?%s", Bucky_Box_Distributor_Api_Settings::$url."boxes", http_build_query($data));
       curl_setopt($ch, CURLOPT_URL, $url);  
       $result = curl_exec($ch);
+      $status = curl_getinfo($ch, CURLINFO_HTTP_CODE);
       curl_close($ch);
-      return $result;
+      return [ $status, $result];
     }
 
     public function find($id, $data = []){
@@ -125,8 +135,9 @@
       $url = sprintf("%s?%s", Bucky_Box_Distributor_Api_Settings::$url."boxes/".$id, http_build_query($data));
       curl_setopt($ch, CURLOPT_URL, $url);  
       $result = curl_exec($ch);
+      $status = curl_getinfo($ch, CURLINFO_HTTP_CODE);
       curl_close($ch);
-      return $result;
+      return [ $status, $result];
     }
   }
 
