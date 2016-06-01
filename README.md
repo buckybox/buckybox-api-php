@@ -8,19 +8,15 @@ In order to use this API you must be a distributor of [Bucky Box](https://www.bu
 
 ### Installation
 
-Composer:
-    "buckybox/bucky-box-api-php": "dev-master"
+Composer: `"buckybox/bucky-box-api-php": "dev-master"`
 
 ### Basics
 
     $wrapper = new BuckyBoxApiWrapper($api_key, $api_secret); 
     var_dump($wrapper->customers()->all());
-    
 
 ### Full API Documentation
 
 Available here: https://api.buckybox.com/docs/v1
 
 OK we lied, not all of the API has been documented, contact support@buckybox.com if you need more details.
-
-
