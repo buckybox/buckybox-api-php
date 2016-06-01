@@ -1,4 +1,4 @@
-Copyright (c) 2013 Bucky Box Limited
+Copyright (c) 2013-2016 Bucky Box Limited
 
 MIT License
 
