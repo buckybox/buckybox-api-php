@@ -1,0 +1,21 @@
+{
+    "name": "buckybox/bucky-box-api-php",
+    "description": "PHP wrapper for the Bucky Box API",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Willy Woo",
+            "homepage": "https://github.com/dangermouse117"
+        },
+        {
+            "name": "Bucky Box Limited",
+            "homepage": "https://github.com/buckybox"
+        }
+    ],
+    "require": {
+        "php": ">=5.5"
+    },
+    "autoload": {
+        "files": ["bucky-box-api-wrapper.php"]
+    }
+}

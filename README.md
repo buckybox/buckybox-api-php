@@ -1,10 +1,26 @@
-# Bucky Box Distributor API v0.0 PHP
+# Bucky Box Core API v1.0 PHP
 
-[API Documentation](https://api.buckybox.co.nz/docs/v0.0)
+###About This Wrapper
 
-In order to use this API you must be a distributor of [Bucky Box](https://buckybox.com), 
-and have aquired a key and a secret. Please contact Bucky Box for further information.
+The Bucky Box PHP API wrapper is meant to help make working with the Bucky Box API easier for PHP developers. It doesn't do anything that working directly with the API can't do, it just provides an abstraction layer making it quicker to use.
 
-> _Settings_
-> 
-> Set the Key and Secret in Class Bucky_Box_Distributor_Api_Settings in Bucky_Box_Distributor_Api.php
+In order to use this API you must be a distributor of [Bucky Box](https://www.buckybox.com), and have acquired a key and a secret. Please contact support@buckybox.com for further information.
+
+### Installation
+
+Composer:
+    "buckybox/bucky-box-api-php": "dev-master"
+
+### Basics
+
+    $wrapper = new BuckyBoxApiWrapper($api_key, $api_secret); 
+    var_dump($wrapper->customers()->all());
+    
+
+### Full API Documentation
+
+Available here: https://api.buckybox.com/docs/v1
+
+OK we lied, not all of the API has been documented, contact support@buckybox.com if you need more details.
+
+
